@@ -1,0 +1,34 @@
+{
+  "name": "becarrental",
+  "version": "1.0.0",
+  "description": "An assignment to build api for car rental service",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "start": "node",
+    "dev": "nodemon",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Vijaysai Yekbote",
+  "license": "MIT",
+  "dependencies": {
+    "argon2": "^0.30.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-joi-validation": "^5.0.1",
+    "joi": "^17.7.0",
+    "jsonwebtoken": "^8.5.1",
+    "moment": "^2.29.4",
+    "mongoose": "^6.8.0",
+    "morgan": "^1.10.0",
+    "razorpay": "^2.8.4",
+    "uuid": "^9.0.0",
+    "validator": "^13.7.0",
+    "winston": "^3.8.2",
+    "winston-mongodb": "^5.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
