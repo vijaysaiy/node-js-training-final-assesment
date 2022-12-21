@@ -12,3 +12,39 @@ export const addMany = async (carData) => {
 export const listCars = async () => {
   return await Cars.find();
 };
+
+export const findById = async (id) => {
+  return await Cars.findById(id);
+};
+
+export const getFastestCar = async () => {
+  return await Cars.aggregate([
+    {
+      $group: { _id: "$_id", topSpeed: { $max: "$topSpeed.speed" } },
+    },
+    {
+      $sort: {
+        topSpeed: -1,
+      },
+    },
+    { $limit: 1 },
+    {
+      $lookup: {
+        from: "cars",
+        localField: "_id",
+        foreignField: "_id",
+        as: "car",
+      },
+    },
+    {
+      $unwind: {
+        path: "$car",
+      },
+    },
+    {
+      $project: {
+        car: "$car",
+      },
+    },
+  ]);
+};

@@ -26,3 +26,12 @@ export const listCars = async (req, res) => {
     res.json({ status: "success", message: error.message });
   }
 };
+
+export const getFastestCar = async (req, res) => {
+  try {
+    const fastestCar = await carServices.getFastestCar();
+    res.json({ status: "success", data: fastestCar });
+  } catch (error) {
+    res.json({ status: "success", message: error.message });
+  }
+};

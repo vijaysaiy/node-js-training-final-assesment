@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-import { carSchema } from "../cars/cars.model,js";
+import { carSchema } from "../cars/cars.model.js";
 
 export const Order = mongoose.model(
   "Order",
@@ -27,6 +27,7 @@ export const Order = mongoose.model(
         default: "pending_approval",
       },
       paymentId: { type: String },
+      rating: Number,
     },
     { timestamps: true }
   )
